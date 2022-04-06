@@ -65,14 +65,19 @@ public class FavoritesPage {
     }
 
     public void apply(){
+
         this.applybutton.click();
     }
 
-    public QuotePage clickQuote(){
-        this.quoteLink.click();
-        return new QuotePage(driver);
-    }
+//    public QuotePage clickQuote(){
+//        this.quoteLink.click();
+//        return new QuotePage(driver);
+//    }
 
+
+    public void clickQuote(){
+        this.quoteLink.click();
+    }
 //    public void nextPage(){
 //        this.nextPage.click();
 //    }

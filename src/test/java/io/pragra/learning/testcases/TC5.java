@@ -2,20 +2,12 @@ package io.pragra.learning.testcases;
 
 import io.pragra.learning.drivermanager.DriverManager;
 import io.pragra.learning.pages.DashboardPage;
-import io.pragra.learning.pages.FavoritesPage;
 import io.pragra.learning.pages.LoginPage;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-public class TC1 {
-
+public class TC5 {
     @Test
     public void osTest() throws InterruptedException {
         WebDriver driver = DriverManager.getDriver();
@@ -28,19 +20,17 @@ public class TC1 {
                 .keyInPassword("Akhil@1995")
                 .submit();
         Thread.sleep(3000);
-        DashboardPage dashboard = new DashboardPage(driver);
-        dashboard.clickFavorites();
-        Thread.sleep(5000);
-        FavoritesPage favorites = new FavoritesPage(driver);
-        favorites.clickQuote();
-        Thread.sleep(4000);
 
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            Files.copy(screenshot.toPath(), Paths.get("quoteDetails.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        DashboardPage dashboard = new DashboardPage(driver);
+        dashboard
+                .clickHorizontalThreeDotMenu();
+
+        Thread.sleep(5000);
         driver.quit();
     }
 }
+
+
+
+
+

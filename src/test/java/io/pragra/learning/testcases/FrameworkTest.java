@@ -20,9 +20,7 @@ public class FrameworkTest {
         String browser = FrameWorkConfig.getProperty("browser.type");
 
         Assert.assertEquals(browser,"CHROME","Mismatch of Broswertype");
-
     }
-
 
     @Test
     public void osTest() throws InterruptedException {
@@ -46,12 +44,12 @@ public class FrameworkTest {
         FavoritesPage favorites = new FavoritesPage(driver);
         Assert.assertEquals(favorites.getHeading(),"Favorite Orders");
         favorites
-                .keyInFilter()
-                .keyInSearchBox("john")
-                .apply();
+                .keyInFilter();
+                //.keyInSearchBox("john")
+                //.apply();
         //favorites.clickQuote();
 
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.quit();
     }
 
